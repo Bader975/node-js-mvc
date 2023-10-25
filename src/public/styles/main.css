@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif ;
+    font-family: 'Mulish', sans-serif ;
+    font-family: 'Playfair Display', serif ;
+    font-family: 'Roboto', sans-serif !important;
+
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+   
+}

@@ -1,0 +1,100 @@
+<!-- lazily load the Swiper CSS file -->
+<link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- lazily load the Swiper JS file -->
+<script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+    onload="initializeSwiperRANDOMID();"></script>
+
+<!-- lc-needs-hard-refresh -->
+
+<script>
+    function initializeSwiperRANDOMID() {
+        const swiper = new Swiper(".mySwiper-RANDOMID", {
+            slidesPerView: 1,
+            grabCursor: true,
+            spaceBetween: 20,
+
+            // autoplay: {
+            //     delay: 3000, // Adjust the delay between slides (in milliseconds)
+            //     disableOnInteraction: false, // Allow autoplay to continue even if the user interacts with the Carousel
+            // },
+
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    }
+</script>
+
+<style>
+    .mySwiper-RANDOMID .card {
+        max-width: 21rem;
+        height: 100%;
+  
+
+    }
+
+    
+
+
+    #swiper-image {
+        width: 100% !important;
+        height: 350px !important;
+    }
+</style>
+
+<div class="container py-6 my-2"><!-- Slider main container -->
+    <div class="swiper mySwiper-RANDOMID">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            
+            <!-- Slides -->
+            <% for(const card of cartsData) { %>
+
+                <div class="swiper-slide h-90 rounded">
+                    <div class="card shadow mx-auto">
+
+                        <div class="lc-block">
+
+                            <img id="swiper-image" src="<%= card.thumbnail %>" width="500" height="200"
+                                alt=<%=card.title%> loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-1">
+                                <h2 class="h5 mt-2">
+                                    <%=card.title%>
+                                </h2>
+
+                                <p>Some quick example text to build on the card title and make up the bulk of
+                                    the card's content..</p>
+
+                            </div>
+                            <!-- <div class="lc-block">
+                                <a class="btn btn-primary" href="#" role="button">Button</a>
+                            </div> -->
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <% } %>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination position-relative pt-5 bottom-0"></div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('includes/head.ejs') %>
+        <title>Main</title>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <%- include('includes/navbar.ejs') %>
+        <!-- NavBar -->
+
+        <!-- Hero section -->
+
+        <div class="container-fluid px-4 py-5 my-5 text-center">
+            <div class="lc-block mb-4">
+                <div editable="rich">
+                    <h2 class="display-2 fw-bold">Level up your <span class="text-dark">WordPress page!</span></h2>
+                </div>
+            </div>
+            <div class="lc-block col-lg-6 mx-auto mb-5">
+                <div editable="rich">
+                    <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap</p>
+                </div>
+            </div>
+
+            <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> <a
+                    class="btn btn-dark btn-lg px-4 gap-3" href="#" role="button">Try it free</a>
+                <a class="btn btn-outline-secondary btn-lg px-4" href="#" role="button">Learn more</a>
+            </div>
+            <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center ">
+                <img class="img-fluid" src="/images/studying-rafiki.svg" width="700" height="783" srcset="" sizes="" style=" background-blend-mode: color-burn;"
+                    alt="">
+            </div>
+
+        </div>
+        <!-- Hero section -->
+
+
+
+
+        <!-- Cards Carousel -->
+      
+            <%- include('includes/cardsCarousel.ejs',{cartsData}) %>
+     
+            <!-- Cards Carousel -->
+
+
+            <!-- Bootstrap JS -->
+            <%- include('includes/end.ejs') %>
+                <!-- Bootstrap JS -->
+
+
+                <!-- Footer -->
+                <%- include('includes/footer.ejs') %>
+                    <!-- Footer -->
+</body>
+
+</html>
