@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 // DB connection 
 connectDB();
+
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 

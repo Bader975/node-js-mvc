@@ -7,7 +7,6 @@ import axios from "axios";
 // Creat 
 
 export const main = async (req: Request, res: Response) => {
-
     try {
         const carts = await axios.get("https://dummyjson.com/carts")
 
@@ -18,8 +17,6 @@ export const main = async (req: Request, res: Response) => {
         console.log(error);
 
     }
-
-
 }
 
 export const newLogin = async (req: Request, res: Response) => {
@@ -27,8 +24,6 @@ export const newLogin = async (req: Request, res: Response) => {
     res.render('login', { msg: "Hello" })
 
 }
-
-
 
 
 // Loging
@@ -46,7 +41,7 @@ export const Login = async (req: Request, res: Response) => {
         if (!user || (!await argon2.verify(user.password, req.body.password))) {
             console.log("wrong email or password");
             res.send("wrong email or password");
-            
+
         }
         else {
             let token = jwt.sign(
